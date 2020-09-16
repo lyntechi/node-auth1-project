@@ -6,7 +6,8 @@ router.get("/", (req, res) => {
       res.json(users);
     })
     .catch((err) => {
-      res.send(err);
+      console.log(err.message);
+      res.send(500).json({ message: err.message });
     });
 });
 
